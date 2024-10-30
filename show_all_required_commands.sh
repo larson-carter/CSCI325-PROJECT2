@@ -51,6 +51,6 @@ echo ""
 echo "========================================"
 echo "Permissions of exampleFile.txt:"
 echo "========================================"
-echo "$ ls -la exampleFile.txt"
-ls -la exampleFile.txt
+echo "$ ls -la ~/Desktop/exampleFile.txt"
+ls -la ~Desktop/exampleFile.txt
 echo ""
