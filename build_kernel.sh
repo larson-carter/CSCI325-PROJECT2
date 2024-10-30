@@ -92,7 +92,7 @@ sudo apt-get install -y fakeroot build-essential ncurses-dev xz-utils libssl-dev
 required_packages=(
     "fakeroot"
     "build-essential"
-    "ncurses-dev"
+#    "ncurses-dev"
     "xz-utils"
     "libssl-dev"
     "bc"

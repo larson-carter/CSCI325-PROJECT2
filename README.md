@@ -57,7 +57,17 @@ Before running the script, ensure your system meets the following requirements:
     chmod +x build_kernel.sh
     ```
 
-## Usage
-Run the script using the following command:
-```bash
-./build_kernel.sh
+4. **Run the Script Executable for Building Kernel**:
+    ```bash
+    ./build_kernel.sh
+    ```
+
+5. **Make the Script Executable**:
+    ```bash
+    chmod +x install_other_programs.sh
+    ```
+
+6. **Run the Script Executable for Building Kernel**:
+    ```bash
+    ./install_other_programs.sh
+    ```
