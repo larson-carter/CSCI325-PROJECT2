@@ -80,7 +80,7 @@ Before running the script, ensure your system meets the following requirements:
     ```bash
     sudo ./install_other_programs.sh
     ```
-     **NOTE: This will take about 5 minutes**
+     **NOTE: This will take about 2 minutes**
 8. **Run the Script Executable for File Permissions**:
     ```bash
     ./create_example_file.sh

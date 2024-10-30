@@ -25,7 +25,7 @@ show_progress() {
 install_package() {
     local package=$1
     echo -e "${GREEN}Installing ${package}...${RESET}"
-    sudo apt-get install -y "$package" >/dev/null 2>&1 &
+    sudo DEBIAN_FRONTEND=noninteractive apt-get install -y "$package" >/dev/null 2>&1 &
     local pid=$!
     local progress=0
     while kill -0 "$pid" 2>/dev/null; do
@@ -51,6 +51,16 @@ while kill -0 "$pid" 2>/dev/null; do
 done
 wait "$pid"
 echo -e "\n${GREEN}Update complete!${RESET}\n"
+
+# Preseed Snort configuration to avoid prompts
+echo -e "${GREEN}Pre-configuring Snort installation...${RESET}"
+sudo debconf-set-selections <<< "snort-snortv3 mysql-server/root_password password root"
+sudo debconf-set-selections <<< "snort-snortv3 mysql-server/root_password_again password root"
+sudo debconf-set-selections <<< "snort-snortv3 mysql-server-5.7/root_password password root"
+sudo debconf-set-selections <<< "snort-snortv3 mysql-server-5.7/root_password_again password root"
+sudo debconf-set-selections <<< "snort-snortv3 snort/startup_conf boolean false"
+sudo debconf-set-selections <<< "snort-snortv3 snort/address_range string 192.168.0.0/16"
+sudo debconf-set-selections <<< "snort-snortv3 snort/interface string eth0"
 
 # Install each package
 packages=("apparmor" "ufw" "snort" "ubuntu-advantage-tools")
