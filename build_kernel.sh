@@ -119,6 +119,6 @@ export DEB_BUILD_OPTIONS=parallel=$(nproc)
 
 # Building Kernel
 loading "Building Kernel"
-fakeroot debian/rules binary-headers binary-generic
+fakeroot debian/rules binary
 
 echo -e "${GREEN}Kernel build completed successfully!${NC}"

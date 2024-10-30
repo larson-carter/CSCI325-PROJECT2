@@ -42,10 +42,12 @@ Before running the script, ensure your system meets the following requirements:
     ```
     sudo apt update -y && sudo apt install -y git
     ```
+    **NOTE: This will take about 3 minutes**
 2. **Clone the Repository**: 
     ```bash
     git clone https://github.com/larson-carter/CSCI325-PROJECT2 && cd CSCI325-PROJECT2
     ```
+    **NOTE: This can take a while depending on internet speeds**
 3. **Make the Script Executable**:
     ```bash
     chmod +x *.sh
@@ -55,9 +57,10 @@ Before running the script, ensure your system meets the following requirements:
     ```bash
     ./build_kernel.sh
     ```
-5. **Run the Script Executable for Modifying GRUB Settings**:
+     **NOTE: This will take a while depends on computer resources**
+5. **Run the Script Executable for Modifying GRUB Settings and installing the new custom kernel**:
     ```bash
-    sudo ./modify_grub.sh
+    sudo ./install_custom_kernel_and_modify_grub.sh
     ```
     **NOTE: Your system will need to restart**
 
@@ -75,8 +78,9 @@ Before running the script, ensure your system meets the following requirements:
 7. **Run the Script Executable for Installing Other Programs**:
     **This took around 2-3 minutes on my machine**
     ```bash
-    ./install_other_programs.sh
+    sudo ./install_other_programs.sh
     ```
+     **NOTE: This will take about 5 minutes**
 8. **Run the Script Executable for File Permissions**:
     ```bash
     ./create_example_file.sh

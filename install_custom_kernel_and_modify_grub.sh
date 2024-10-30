@@ -20,8 +20,9 @@ cd ..
 # Check for kernel package files
 kernel_image=$(ls linux-image-*.deb 2>/dev/null)
 kernel_headers=$(ls linux-headers-*.deb 2>/dev/null)
+kernel_modules=$(ls linux-modules-*.deb 2>/dev/null)
 
-if [ -z "$kernel_image" ] || [ -z "$kernel_headers" ]; then
+if [ -z "$kernel_image" ] || [ -z "$kernel_headers" ] || [ -z "$kernel_modules" ]; then
   echo "Error: Kernel package files not found."
   echo "Please ensure you have built the kernel and the .deb files are present in the directory."
   exit 1
@@ -29,7 +30,7 @@ fi
 
 # Install the custom kernel packages
 echo "Installing the custom kernel packages..."
-dpkg -i linux-image-*.deb linux-headers-*.deb
+dpkg -i linux-modules-*.deb linux-image-*.deb linux-headers-*.deb
 
 if [ $? -ne 0 ]; then
   echo "Error occurred during kernel package installation."
