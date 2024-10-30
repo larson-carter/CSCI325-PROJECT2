@@ -38,36 +38,50 @@ Before running the script, ensure your system meets the following requirements:
 
 ## Installation
 
-**Make sure you have git installed**
+1. **Make sure you have git installed**:
     ```
-    sudo apt update -y &&
-    sudo apt install -y git
+    sudo apt update -y && sudo apt install -y git
     ```
-
-1. **Clone the Repository**: 
+2. **Clone the Repository**: 
     ```bash
-    git clone https://github.com/larson-carter/CSCI325-PROJECT2
-    ```
-2. **Navigate to the Script Directory**:
-    ```bash
-    cd CSCI325-PROJECT2
+    git clone https://github.com/larson-carter/CSCI325-PROJECT2 && cd CSCI325-PROJECT2
     ```
 3. **Make the Script Executable**:
     ```bash
-    chmod +x build_kernel.sh
+    chmod +x *.sh
     ```
-
 4. **Run the Script Executable for Building Kernel**:
+    **This took exactly one hour on my macine**
     ```bash
     ./build_kernel.sh
     ```
-
-5. **Make the Script Executable**:
+5. **Run the Script Executable for Modifying GRUB Settings**:
     ```bash
-    chmod +x install_other_programs.sh
+    sudo ./modify_grub.sh
     ```
+    **NOTE: Your system will need to restart**
 
-6. **Run the Script Executable for Building Kernel**:
+    **Select Advanced options for Ubuntu>Ubuntu, with Linux 6.8.0-30-generic when you are booting back up**
+
+    **IF you need to revert the above changes:**
+    ```bash
+    sudo cp /etc/default/grub.backup.[timestamp] /etc/default/grub
+    sudo update-grub
+    ```
+6. **Navigate back to project Directory**:
+    ```bash
+    cd CSCI325-PROJECT2
+    ```
+7. **Run the Script Executable for Installing Other Programs**:
+    **This took around 2-3 minutes on my machine**
     ```bash
     ./install_other_programs.sh
+    ```
+8. **Run the Script Executable for File Permissions**:
+    ```bash
+    ./create_example_file.sh
+    ```
+9. **Run the Script Executable for Showing all Project Requirements**:
+    ```bash
+    ./show_all_required_commands.sh
     ```
