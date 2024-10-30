@@ -2,11 +2,11 @@
 
 # This script creates exampleFile.txt and sets specific permissions in the current directory.
 
-# Create exampleFile.txt in the current directory
-touch exampleFile.txt
+# Create exampleFile.txt
+touch ~/Desktop/exampleFile.txt
 
 # Set the required permissions
-chmod u=rwx,g=wx,o=r exampleFile.txt
+sudo chmod u=rwx,g=wx,o=r ~/Desktop/exampleFile.txt
 
 # Display the permissions of the file
 echo "========================================"
